@@ -1,0 +1,112 @@
+html {
+    height: 100%;
+}
+
+body {
+    color: #555;
+    font-family: 'Roboto Slab';
+}
+
+.hero {
+    background: url('/media/the-cornish-arms-st-ives.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backface-visibility: visible;
+    height: calc(100vh - 164px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 0 0 120px;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: 'Shizuru';
+}
+
+.main-logo-link {
+    width: fit-content;
+    text-decoration: none;
+    color: #555;
+    letter-spacing: 6px;
+    
+}
+
+.buy-now-button {
+    background: #0EBFE9;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-blue {
+    background: #0EBFE9;
+    color: white;
+}
+
+.btn-outline-blue {
+    background: white;
+    color: #0EBFE9 !important; /* use important to override link colours for <a> elements */
+    border: 1px solid #0EBFE9;
+}
+
+.buy-now-button:hover,
+.buy-now-button:active,
+.buy-now-button:focus,
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+    background: #0EBFE9	;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.text-blue {
+    color: #0EBFE9 !important;
+}
+
+.border-blue {
+    border: 1px solid #0EBFE9	 !important;
+}
+
+.bg-blue {
+    background: #0EBFE9	 !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+  /* fixed top navbar only on medium and up */
+  @media (min-width: 992px) {
+      .fixed-top-desktop-only {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1030;
+      }
+  
+      .header-container {
+          padding-top: 164px;
+      }
+  }

@@ -28,3 +28,5 @@ processes.
         LOGIN_URL = '/accounts/login/'
     - #### redirects to  homepage after login
         LOGIN_REDIRECT_URL = '/'
+        - to test this was working i initially changed the path to success and then ran the server with
+        the accounts/login path. This returned an error 404 but /success was displayed in the browser.

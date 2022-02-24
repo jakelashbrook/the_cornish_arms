@@ -5,20 +5,14 @@ html {
 body {
     color: #555;
     font-family: 'Roboto Slab';
+    background-color: aliceblue;
 }
 
 .hero {
-    background: url('/media/the-cornish-arms-st-ives.jpg') no-repeat center center fixed;
-    background-size: cover;
-    backface-visibility: visible;
     height: calc(100vh - 164px);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.hero-content {
-    flex: 0 0 120px;
 }
 
 .logo-font {
@@ -31,24 +25,24 @@ body {
     text-decoration: none;
     color: #555;
     letter-spacing: 6px;
-    
+}
+
+.main-nav-link:hover,
+.main-nav-link:active,
+.main-nav-link:focus {
+    border-bottom: 1px ridge #0EBFE9;
 }
 
 .buy-now-button {
-    background: #0EBFE9;
-    color: white;
-    min-width: 260px;
+    background: aliceblue;
+    color: #555;
+    border: 1px solid #555 !important;
 }
 
 .btn-blue {
-    background: #0EBFE9;
-    color: white;
-}
-
-.btn-outline-blue {
-    background: white;
-    color: #0EBFE9 !important; /* use important to override link colours for <a> elements */
-    border: 1px solid #0EBFE9;
+    background: aliceblue;
+    color: #555;
+    border: 1px solid #555 !important;
 }
 
 .buy-now-button:hover,
@@ -58,11 +52,15 @@ body {
 .btn-blue:active,
 .btn-blue:focus {
     background: #0EBFE9	;
-    color: white;
+    color: #555;
+}
+
+.search-icon:hover {
+    color: #0EBFE9;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #555 !important;
 }
 
 .text-blue {
@@ -74,7 +72,15 @@ body {
 }
 
 .bg-blue {
-    background: #0EBFE9	 !important;
+    background: aliceblue !important;
+}
+
+.bg-black {
+    background: #555 !important;
+}
+
+.border-black {
+    border: 1px solid #555 !important;
 }
 
 .overlay {

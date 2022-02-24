@@ -1,0 +1,47 @@
+<div class="collapse navbar-collapse bg-blue" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto list-inline text-center bg-blue">
+        <li class="nav-item dropdown list-inline-item">
+            <a class="font-weight-bold nav-link text-black main-nav-link text-uppercase" href="#" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu
+            </a>
+            <div class="dropdown-menu border-0 list-inline-item" aria-labelledby="menu-link">
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Starters</a>
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Mains</a>
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Desserts</a>
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Kids</a>
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">The Menu</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown list-inline-item">
+            <a class="font-weight-bold nav-link text-black main-nav-link text-uppercase" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="about-link">
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Opening Times</a>
+                <a href="{% url 'home' %}" class="dropdown-item text-center text-lg-left">Contact Us</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown list-inline-item">
+            <a class="font-weight-bold nav-link text-black main-nav-link text-uppercase" href="#" id="booking-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Book
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="booking-link">
+                <a href="{% url 'home' %}?category=new_arrivals" class="dropdown-item text-center text-lg-left">Book a table</a>
+                <a href="{% url 'home' %}?category=new_arrivals" class="dropdown-item text-center text-lg-left">Book an event</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown list-inline-item">
+            <a class="font-weight-bold nav-link text-black main-nav-link text-uppercase" href="#" id="media-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Media
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="media-link">
+                <a href="{% url 'home' %}?category=new_arrivals" class="dropdown-item text-center text-lg-left">Photos</a>
+                <a href="{% url 'home' %}?category=new_arrivals" class="dropdown-item text-center text-lg-left">News</a>
+            </div>
+        </li>
+        
+    </ul>
+</div>

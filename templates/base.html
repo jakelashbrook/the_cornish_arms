@@ -39,52 +39,45 @@
   </head>
   <body>
     
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top bg-blue">
     <!-- Discount banner -->
-        <div id="discount-banner" class="row text-center d-none d-lg-flex">
-            <div class="col-sm-12 col-lg-1 bg-white text-blue pt-3">
-                <h5 class="my-1"><a href="" class="text-blue">Tripadvisor</a></h5>
-            </div>
-            <div class="col-sm-12 col-lg-1 bg-white text-blue pt-3">
-                <h5 class="my-1"><a href="tel:01736796112"><i class="fas fa-phone text-blue"></i></a></h5>
-            </div>
-            
-            <div class="col-sm-12 col-lg-1 bg-white text-blue pt-3">
-                <h5 class="my-1"><a href="https://www.facebook.com/StIvesCornishArms/">
-                    <i class="fab fa-facebook-f text-blue"></i></a>
-                </h5>
-            </div>         
-            <div class="col-sm-12 col-lg-9 text-right bg-white text-blue pt-3">
-                <h5 class="my-1">Exclusive offer: 10% off ALL orders over {{ DISCOUNT_THRESHOLD }}! Collection only</h5>                
-            </div>
+        <div id="discount-banner" class="row text-center d-none d-lg-flex pb-0 mb-0 bg-black">      
+            <span class="col-12 text-white text-center">
+                <h5 class="my-1">Exclusive offer: 10% off ALL orders over {{ DISCOUNT_THRESHOLD }}! Collection only
+                    <a href="" class="buy-now-btn btn btn-blue text-uppercase ml-2 rounded-0">Menu</a> 
+                </h5>              
+            </span>
             
         </div>
+    <!-- Main Nav On small devices -->
+    <!-- Injects larger device version of main nav -->
+    {% include 'includes/mobile-top-header.html' %}
     <!-- Logo, Search Bar, Account & Shopping Basket Navigation -->
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex pt-3">
+      <div id="topnav" class="row bg-blue pt-lg-2 d-none d-lg-flex bg-blue">
           <!-- Search Bar -->
           <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
               <form method="GET" action="">
                   <div class="input-group w-100">
                       <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our menu..">
                       <div class="input-group-append">
-                          <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                  <i class="fas fa-search"></i>
+                          <button class="form-control btn bg-white border border-black rounded-0" type="submit">
+                                  <i class="fas fa-search search-icon"></i>
                           </button>
                       </div>
                   </div>
               </form>
           </div>
-          <!-- Image if large -->
+          <!-- Site logo -->
           <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center">
             <a href="{% url 'home' %}" class="nav-link main-logo-link text-black text-uppercase">
-                <h2>The<strong class="text-blue text-uppercase logo-font">Cornish</strong>Arms</h2>
+                <h2>The <strong class="text-blue text-uppercase logo-font">Cornish</strong> Arms</h2>
             </a>
         </div>
         <!-- Account -->
           <div class="col-12 col-lg-2 my-auto py-1 py-lg-0">
               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                   <li class="list-inline-item dropdown">
-                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="text-black nav-link main-nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <div class="text-center">
                               <div><i class="fas fa-user fa-lg"></i></div>
                               <p class="my-0">My Account</p>
@@ -93,9 +86,10 @@
                       <div class="dropdown-menu border-0" aria-labelledby="user-options">
                           {% if request.user.is_authenticated %}
                               {% if request.user.is_superuser %}
-                                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                  <a href="" class="dropdown-item">Menu Management</a>
+                                  <a href="{% url 'home' %}" class="dropdown-item">Edit Homepage</a>
                               {% endif %}
-                              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                              <a href="" class="dropdown-item">My Profile</a>
                               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                           {% else %}
                               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -104,7 +98,7 @@
                       </div>
                   </li>
                   <li class="list-inline-item">
-                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link main-nav-link" href="">
                           <div class="text-center">
                               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                               <p class="my-0">
@@ -122,11 +116,15 @@
       </div>
        <!-- Main Site Navigation -->
     <div class="row bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-blue w-100">
+            <a href="{% url 'home' %}" class="nav-link main-logo-link text-black text-uppercase d-lg-none">
+                <h6>The <strong class="text-blue text-uppercase logo-font">Cornish</strong> Arms</h6>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+            <!-- Injects larger device version of main nav -->
+            {% include 'includes/main-nav.html' %}
         </nav>
     </div>
     

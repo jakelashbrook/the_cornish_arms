@@ -2,10 +2,37 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid hero m-0 p-0 text-center">
-    <div class="container pt-3 mt-3 hero-content">
-        <h3 class="text-white">Order from our new menu now!</h3>
-        <a href="" class="btn btn-lg bg-blue pt-3 mt-3 text-white text-uppercase">Menu</a>
+<!-- Slideshow carousel container -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+      </div>
     </div>
-</div>
+  </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.carousel').carousel()
+</script>
 {% endblock %}

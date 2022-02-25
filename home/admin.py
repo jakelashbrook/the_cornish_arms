@@ -1,8 +1,6 @@
 from django.contrib import admin
-from .models import OpeningTime, FoodTime, Event
+from .models import Opening
 # Register your models here.
 
 
-admin.site.register(OpeningTime)
-admin.site.register(FoodTime)
-admin.site.register(Event)
+admin.site.register(Opening)

@@ -87,7 +87,7 @@
                           {% if request.user.is_authenticated %}
                               {% if request.user.is_superuser %}
                                   <a href="" class="dropdown-item">Menu Management</a>
-                                  <a href="{% url 'home' %}" class="dropdown-item">Edit Homepage</a>
+                                  <a href="{% url 'home' %}" class="dropdown-item"></a>
                               {% endif %}
                               <a href="" class="dropdown-item">My Profile</a>
                               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

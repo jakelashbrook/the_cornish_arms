@@ -1,0 +1,1 @@
+[{"model": "home.Opening", "pk": 1, "fields": {"weekday_open":"4pm", "weekday_close": "10pm", "weekend_open": "12pm", "weekend_close":"11pm"}}]

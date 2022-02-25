@@ -3,18 +3,92 @@
 
 {% block content %}
     <div class="container-fluid">
-        <h2 class="text-uppercase text-center border-black">Opening Times</h2>
+        <h2 class="text-uppercase text-center">Opening Times</h2>
         <div class="row">
-            <div class="col-12 col-lg-6 border-black">
-                <h5 class="text-center pt-3">Bar</h5>
-                <hr width="60%">
-                <strong>Weekdays</strong>
-                {{ opening_time.weekday_opening }}
+            <div class="col-12 col-lg-4">
+                <h5 class="p-3 text-uppercase logo-font text-white font-weight-bold bg-black">Bar</h5>
+                {% for o in opening %}
+                <table class="table-responsive">
+                <tbody>
+                <tr>
+                    <td><strong>Monday:</strong></td>
+                    <td class="pl-3">{{ o.monday }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Tuesday:</strong></td>
+                    <td class="pl-3">{{ o.tuesday }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Wednesday:</strong></td>
+                    <td class="pl-3">{{ o.wednesday }}</td>
+                </tr>  
+                <tr>
+                    <td><strong>Thursday:</strong></td>
+                    <td class="pl-3">{{ o.thursday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Friday:</strong></td>
+                    <td class="pl-3">{{ o.friday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Saturday:</strong></td>
+                    <td class="pl-3">{{ o.saturday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Sunday:</strong></td>
+                    <td class="pl-3">{{ o.sunday }}</td>
+                </tr>
+            </tbody>
+                </table>
+                {% endfor %}
             </div>
-            <div class="col-12 col-lg-6 border-black">
-                <h5 class="text-center pt-3">Food</h5>
+            <div class="col-12 col-lg-4 border-black">
+                <h5 class="text-center pt-3">Logo</h5>
                 <hr width="60%">
-                <strong>Weekdays</strong>
+                <strong></strong>
+            </div>
+            <div class="col-12 col-lg-4">
+                <h5 class="p-3 text-uppercase logo-font text-white font-weight-bold bg-black">Food</h5>
+                {% for f in food %}
+                <table class="table-responsive">
+                <tbody>
+                <tr>
+                    <td><strong>Monday:</strong></td>
+                    <td class="pl-3">{{ f.monday }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Tuesday:</strong></td>
+                    <td class="pl-3">{{ f.tuesday }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Wednesday:</strong></td>
+                    <td class="pl-3">{{ f.wednesday }}</td>
+                </tr>  
+                <tr>
+                    <td><strong>Thursday:</strong></td>
+                    <td class="pl-3">{{ f.thursday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Friday:</strong></td>
+                    <td class="pl-3">{{ f.friday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Saturday:</strong></td>
+                    <td class="pl-3">{{ f.saturday }}</td>
+                </tr>    
+                <tr>
+                    <td><strong>Sunday:</strong></td>
+                    <td class="pl-3">{{ f.sunday }}</td>
+                </tr>
+            </tbody>
+                </table>
+                {% endfor %}
+            </div>
+            <div class="container">
+                <form action="{% url 'opening_times' %}">
+                    {% csrf_token %}
+                    {{ food_form }}
+                </form>
             </div>
         </div>
 
